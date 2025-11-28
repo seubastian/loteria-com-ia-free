@@ -1,0 +1,65 @@
+# ============================================
+# PROJETO: Loteria com IA – 3Millennium
+# Ignorar arquivos desnecessários no Git
+# ============================================
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ---- Virtual Environments ----
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+.streamlit/config.toml
+.streamlit/*.log
+
+# ---- Logs ----
+*.log
+logs/
+tmp/
+
+# ---- Arquivos temporários ----
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# ---- Sistema operacional ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- IDE/Editor ----
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ---- Arquivos grandes e dados privados ----
+# (CSV de produção deixam o repositório lento)
+*.csv
+datasets/*.csv
+data/*.csv
+*.xlsx
+*.xls
+
+# ---- JSON de chaves/credenciais ----
+*.json
+keys/
+credentials/
+config/secrets.json
+
+# ---- Modelos de IA grandes ----
+*.h5
+*.pkl
+*.joblib
+models/
