@@ -1,119 +1,88 @@
-# 🎰 Loteria com IA – Repositório Privado (3Millennium)
-**Repositório interno da suíte completa de aplicativos profissionais para análise de loterias com Inteligência Artificial.**
+🎰 Apps Gratuitos – Análises de Loterias
 
-Este é o repositório **privado** da 3Millennium Tecnologia & IA contendo:
-- Apps Premium em Streamlit
-- Algoritmos proprietários de análise estatística
-- Modelos de machine learning
-- Mecanismos avançados de filtragem
-- Processamento de bases históricas
-- Scripts internos de engenharia de dados
-- Integração com Google Cloud Storage
-- Ferramentas exclusivas da plataforma “Seu Canal da Sorte”
+Este repositório contém três ferramentas gratuitas desenvolvidas pela 3Millennium para ajudar apostadores a analisar padrões das loterias brasileiras com rapidez e facilidade.
 
-⚠️ **Atenção:**  
-Nenhum conteúdo deste repositório pode ser divulgado, clonado, copiado ou distribuído sem autorização expressa da 3Millennium.
+Cada arquivo Python aqui é um aplicativo independente, focado em um tipo de análise estatística essencial:
 
----
+Atraso (atrasos das dezenas)
 
-## 📁 Estrutura Geral
+Frequência (quais dezenas mais aparecem)
 
-loteria-com-ia/
-│
-├── apps-premium/
-│ ├── mega-sena-premium/
-│ ├── lotofacil-premium/
-│ ├── quina-premium/
-│ └── ...
-│
-├── libs/
-│ ├── filtros/
-│ ├── estatisticas/
-│ ├── machine_learning/
-│ └── utils/
-│
-├── datasets/
-│ ├── (não versionados – carregados via GCS)
-│
-├── models/
-│ ├── xgboost/
-│ ├── redes_neurais/
-│ └── joblib/
-│
-├── scripts/
-│ ├── atualiza_bases.py
-│ ├── pre_processamento.py
-│ ├── pipeline_treinamento.py
-│
-├── .streamlit/
-│ └── secrets.toml (não versionado)
-└── README.md
+Ciclo (fechamento das dezenas dentro de ciclos)
 
+Essas ferramentas são versões simplificadas, destinadas a uso público e educacional. As versões Premium possuem análises avançadas, filtros inteligentes e machine learning.
 
----
+📁 Arquivos incluídos
+🔵 1. Calcula_Atraso_Dezenas.py
+✦ Função:
 
-## 🔧 Tecnologias e Padrões
+Calcula quantos concursos cada dezena está atrasada — ou seja, há quantos sorteios ela não aparece.
 
-- Python 3.x  
-- Streamlit  
-- Pandas / NumPy  
-- XGBoost / Scikit-Learn  
-- Plotly  
-- Google Cloud Storage  
-- Railway / Cloud Run (deploy)  
-- Padrão empresarial para versionamento e documentação  
+✦ O que esse app mostra:
 
----
+Lista de todas as dezenas
 
-## 🔒 Dados e Segurança
+Quantidade de concursos sem aparecer
 
-- Todos os `.csv` de produção são armazenados exclusivamente no **Google Cloud Storage**.  
-- O repositório não contém dados confidenciais.  
-- Credenciais estão protegidas em `secrets.toml` (não versionado).  
-- Acesso restrito a colaboradores autorizados da 3Millennium.
+Ordenação das dezenas mais atrasadas para as menos atrasadas
 
----
+Visualização simples de atraso por ranking
 
-## 🛠️ Como rodar localmente
+✦ Para que serve:
 
-1. Clone o repositório  
-```bash
-git clone https://github.com/3millennium/loteria-com-ia.git
+Identificar dezenas que podem estar em um “ponto de retorno”
 
-2- Ative o ambiente virtual
+Análise comum entre apostadores que procuram padrões ou tendências de atraso
 
-python -m venv venv
-venv\Scripts\activate      # Windows
-source venv/bin/activate  # Linux/Mac
+🟢 2. Calcula_ranking_Frequencia_Dezenas.py
+✦ Função:
 
-    Instale dependências
+Calcula quantas vezes cada dezena já foi sorteada dentro do período histórico da loteria.
 
-pip install -r requirements.txt
+✦ O que o app entrega:
 
-    Execute o app
+Ranking das dezenas mais frequentes (quentes)
 
-streamlit run apps-premium/mega-sena-premium/app.py
+Ranking das menos frequentes (frias)
 
-🧩 Integrações Internas
+Comparação geral entre todas as dezenas
 
-    Google Cloud Storage (datasets)
+Dados organizados do maior para o menor
 
-    Cloudflare (domínios corporativos)
+✦ Para que serve:
 
-    Railway / Cloud Run (deploy Premium)
+Descobrir quais dezenas historicamente “aparecem mais”
 
-    Automação de atualizações via scripts internos
+Identificar padrões de repetição
 
-    APIs externas de sorteios (quando aplicável)
+Criar combinações balanceadas entre dezenas quentes e frias
 
-📎 Licença
+🟣 3. calculo_do_ciclo.py
+✦ Função:
 
-© 3Millennium Tecnologia & IA – Uso exclusivo corporativo.
-Todos os direitos reservados.
-📞 Contato Interno
+Identifica ciclos de fechamento, que mostram quantos concursos foram necessários para que todas as 60 dezenas (no caso da Mega-Sena) aparecessem ao menos uma vez.
 
-    Desenvolvimento: sebastiao@3millennium.com.br
+✦ O que o app mostra:
 
-Suporte técnico: infra@3millennium.com.br
+Em qual ponto o ciclo atual está
 
+Quantas dezenas faltam sair para fechar o ciclo
+
+Quantos concursos já ocorreram no ciclo
+
+Histórico de ciclos anteriores (caso a base contenha)
+
+✦ Para que serve:
+
+Avaliar se o ciclo está “curto” ou “longo”
+
+Medir saturação do ciclo atual
+
+Apoiar estratégias que consideram fechamento de dezenas
+
+🧠 Sobre estes aplicativos
+
+Esses três apps fazem parte da linha Free Tools da plataforma “Seu Canal da Sorte”, desenvolvida pela 3Millennium Tecnologia & IA.
+
+Eles representam a versão simplificada dos nossos módulos Premium.
 
